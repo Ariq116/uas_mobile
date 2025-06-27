@@ -35,10 +35,18 @@ public class MainActivity extends AppCompatActivity {
             if (isLoggedIn) {
                 // Jika user sudah login, langsung arahkan ke HomeFragment
                 intent = new Intent(MainActivity.this, MainHome.class);
-                intent.putExtra("fragmentToLoad", "home"); // agar langsung ke HomeFragment
+                intent.putExtra("fragmentToLoad", "home");
             } else {
-                // Jika belum login, arahkan ke halaman login
-                intent = new Intent(MainActivity.this, MainLogin.class);
+                SharedPreferences guest = getSharedPreferences("user_session", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = guest.edit();
+                editor.putBoolean("is_guest", true);
+                editor.putBoolean("is_logged_in", false);
+                editor.putString("email", "guest@keanstore.com");
+                editor.putString("nama", "Tamu");
+                editor.apply();
+
+                intent = new Intent(MainActivity.this, MainHome.class);
+                intent.putExtra("fragmentToLoad", "home");
             }
             startActivity(intent);
             finish();

@@ -51,7 +51,7 @@ public class MainLogin extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
-        btnGuestLogin = findViewById(R.id.btnGuestLogin); // 🔹 Inisialisasi tombol tamu
+        btnGuestLogin = findViewById(R.id.btnGuestLogin);
         tvRegister = findViewById(R.id.tvRegister);
 
         tvRegister.setOnClickListener(v -> {
