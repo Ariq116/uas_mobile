@@ -9,17 +9,36 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.bumptech.glide.Glide;
 import com.example.uts_a22202303001.MainHistory;
 import com.example.uts_a22202303001.MainLogin;
+import com.example.uts_a22202303001.ProfileResponse;
 import com.example.uts_a22202303001.R;
+import com.example.uts_a22202303001.RegisterAPI;
+import com.example.uts_a22202303001.ServerAPI;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ProfileFragment extends Fragment {
+    private String email;
+    private SharedPreferences sharedPreferences;
 
     @Nullable
     @Override
@@ -28,7 +47,8 @@ public class ProfileFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("user_session", Context.MODE_PRIVATE);
+        sharedPreferences = requireActivity().getSharedPreferences("user_session", Context.MODE_PRIVATE);
+        email = sharedPreferences.getString("email", "");
         boolean isGuest = sharedPreferences.getBoolean("is_guest", false);
 
         if (isGuest) {
@@ -69,7 +89,7 @@ public class ProfileFragment extends Fragment {
         btnHistory.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), MainHistory.class);
             startActivity(intent);
-});
+        });
 
         return view;
     }
