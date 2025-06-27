@@ -49,10 +49,16 @@ public class ProfileFragment extends Fragment {
         Button btnEdit = view.findViewById(R.id.btn_edit_profile);
         Button btnKontak = view.findViewById(R.id.btn_kontak_kami);
         Button btnHistory = view.findViewById(R.id.btn_order_histori);
+        Button btnChangePassword = view.findViewById(R.id.btn_change_password);
 
         btnEdit.setOnClickListener(v -> {
             Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_activity_main)
                     .navigate(R.id.editProfileFragment);
+        });
+
+        btnChangePassword.setOnClickListener(v -> {
+            Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_activity_main)
+                    .navigate(R.id.ChangePasswordFragment);
         });
 
         btnKontak.setOnClickListener(v -> {

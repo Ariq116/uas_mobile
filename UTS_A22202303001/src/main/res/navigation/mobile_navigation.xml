@@ -43,4 +43,10 @@
         android:label="Kontak Kami"
         tools:layout="@layout/fragment_kontak_kami" />
 
+    <fragment
+        android:id="@+id/ChangePasswordFragment"
+        android:name="com.example.uts_a22202303001.ui.profile.ChangePasswordFragment"
+        android:label="Ganti Password"
+        tools:layout="@layout/fragment_change_password" />
+
 </navigation>
