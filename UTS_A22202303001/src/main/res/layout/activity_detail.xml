@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imgDetail"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/tvNamaDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nama Produk"
+        android:textSize="18sp"
+        android:paddingTop="16dp"
+        android:fontFamily="sans-serif-medium"/>
+
+    <TextView
+        android:id="@+id/tvHargaDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Harga"
+        android:textSize="16sp"
+        android:paddingTop="8dp"
+        android:textColor="@android:color/holo_green_dark"/>
+
+    <TextView
+        android:id="@+id/tvStokDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stok"
+        android:textSize="14sp"
+        android:paddingTop="8dp" />
+
+    <TextView
+        android:id="@+id/tvKategoriDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kategori"
+        android:textSize="14sp"
+        android:paddingTop="8dp" />
+
+    <TextView
+        android:id="@+id/tvDeskripsiDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Deskripsi"
+        android:textSize="14sp"
+        android:paddingTop="8dp" />
+
+    <!-- Tambahan Jumlah View -->
+    <TextView
+        android:id="@+id/tvViewCountDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dilihat: 0 kali"
+        android:textSize="14sp"
+        android:paddingTop="8dp"
+        android:textColor="@android:color/darker_gray" />
+</LinearLayout>

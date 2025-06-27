@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">UTS_A22202303001</string>
+    <string name="title_activity_main_home">MainHome</string>
+    <string name="title_product">Product</string>
+    <string name="title_order">Order</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_home">Home</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

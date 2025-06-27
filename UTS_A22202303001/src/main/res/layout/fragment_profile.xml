@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:gravity="center_horizontal"
+    android:background="@drawable/yellowjordan">
+
+    <!-- ✅ Logo di bagian atas -->
+    <ImageView
+        android:id="@+id/img_logo_profile"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/kean_logo"
+    android:contentDescription="Logo Aplikasi"
+    android:scaleType="centerInside" />
+
+    <!-- Tombol Edit Profile -->
+    <Button
+        android:id="@+id/btn_edit_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edit Profile" />
+
+    <!-- Tombol Kontak Kami -->
+    <Button
+        android:id="@+id/btn_kontak_kami"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kontak Kami"
+        android:layout_marginTop="12dp" />
+
+    <Button
+        android:id="@+id/btn_order_histori"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Order Histori"
+        android:layout_marginTop="12dp" />
+</LinearLayout>
