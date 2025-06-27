@@ -89,6 +89,13 @@
             android:textColor="#215BC8"
             android:layout_marginTop="4dp" />
 
+        <ImageButton
+            android:id="@+id/imgProof"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/default_selected_dot"
+            android:visibility="gone"/>
+
         <!-- Tombol Upload Bukti -->
         <Button
             android:id="@+id/btnUploadBukti"

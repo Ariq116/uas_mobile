@@ -1,15 +1,19 @@
 package com.example.uts_a22202303001;
 
+import static com.example.uts_a22202303001.ServerAPI.BASE_URL;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.uts_a22202303001.model.OrderHistory;
 
 import java.util.List;
@@ -64,6 +68,21 @@ public class OrderHistoryAdapter extends RecyclerView.Adapter<OrderHistoryAdapte
 
         holder.tvStatus.setText("Status: " + status);
 
+        if (order.getMetode() != null && order.getMetode().trim().equalsIgnoreCase("COD")) {
+            holder.imgProof.setVisibility(View.GONE);
+            holder.btnUploadBukti.setVisibility(View.GONE);
+        } else if (order.getBukti_bayar() == null || order.getBukti_bayar().isEmpty()) {
+            holder.imgProof.setVisibility(View.GONE);
+            holder.btnUploadBukti.setVisibility(View.VISIBLE);
+        } else {
+            holder.imgProof.setVisibility(View.VISIBLE);
+            holder.btnUploadBukti.setVisibility(View.GONE);
+            Glide.with(context)
+                    .load(BASE_URL + "upload_bukti/" + order.getBukti_bayar())
+                    .placeholder(R.drawable.ic_launcher_background)
+                    .into(holder.imgProof);
+        }
+
         // Tombol Upload Bukti
         holder.btnUploadBukti.setOnClickListener(v -> {
             if (uploadClickListener != null) {
@@ -80,6 +99,7 @@ public class OrderHistoryAdapter extends RecyclerView.Adapter<OrderHistoryAdapte
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvNomorOrder, tvAlamatOrder, tvKotaProvinsi, tvSubtotalOngkir, tvTotalBayar, tvMetodeEstimasi, tvStatus;
         Button btnUploadBukti;
+        ImageButton imgProof;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -91,6 +111,7 @@ public class OrderHistoryAdapter extends RecyclerView.Adapter<OrderHistoryAdapte
             tvMetodeEstimasi = itemView.findViewById(R.id.tvMetodeEstimasi);
             tvStatus = itemView.findViewById(R.id.tvStatus);
             btnUploadBukti = itemView.findViewById(R.id.btnUploadBukti);
+            imgProof = itemView.findViewById(R.id.imgProof);
         }
     }
 }

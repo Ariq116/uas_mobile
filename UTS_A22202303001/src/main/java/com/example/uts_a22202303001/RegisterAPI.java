@@ -47,6 +47,13 @@ public interface RegisterAPI {
             @Part("email") RequestBody email,
             @Part MultipartBody.Part foto );
 
+    @Multipart
+    @POST("upload_profile.php")
+    Call<ResponseBody> uploadFoto(
+            @Part("email") RequestBody email,
+            @Part MultipartBody.Part image
+    );
+
     @POST("post_change_password.php")
     Call<ResponseBody> changePassword(
             @Query("email") String email,
@@ -92,4 +99,11 @@ public interface RegisterAPI {
     @FormUrlEncoded
     @POST("update_viewer.php")
     Call<ResponseBody> updateViewer(@Field("id_produk") String idProduk);
+
+    @Multipart
+    @POST("upload_bukti.php")
+    Call<ResponseBody> uploadBuktiTransfer(
+            @Part("order_id") RequestBody orderId,
+            @Part MultipartBody.Part bukti
+    );
 }
