@@ -1,5 +1,7 @@
 package com.example.uts_a22202303001.ui.order;
 
+import static com.example.uts_a22202303001.ServerAPI.BASE_URL_Image;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -121,7 +123,7 @@ public class OrderFragment extends Fragment {
                 holder.tvTotal.setText("Total: " + rupiah.format(product.getSubtotal()));
 
                 Glide.with(context)
-                        .load("http://10.0.2.2/uts/img/" + product.getFoto())
+                        .load(BASE_URL_Image + product.getFoto())
                         .placeholder(android.R.drawable.ic_menu_report_image)
                         .error(android.R.drawable.stat_notify_error)
                         .into(holder.imgProduk);

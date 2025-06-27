@@ -1,5 +1,7 @@
 package com.example.uts_a22202303001;
 
+import static com.example.uts_a22202303001.ServerAPI.BASE_URL_Image;
+
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -45,7 +47,7 @@ public class DetailActivity extends AppCompatActivity {
             tvViewCount.setText("Dilihat: " + product.getJumlah_pengunjung() + " kali"); // ← tampilkan jumlah view
 
             Glide.with(this)
-                    .load("http://10.0.2.2/uts/img/" + product.getFoto())
+                    .load(BASE_URL_Image + product.getFoto())
                     .placeholder(android.R.drawable.ic_menu_gallery)
                     .into(imgProduk);
         } else {
